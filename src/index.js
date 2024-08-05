@@ -28,3 +28,27 @@ eventsApi.getEvents()
     .catch(error => {
         console.error('There has been a problem with your fetch operation:', error);
     });
+
+
+// Choose Country
+
+const dropdownInput = document.getElementById('dropdown-input');
+const dropdownMenu = document.querySelector('.dropdown-menu');
+
+dropdownInput.addEventListener('click', function() {
+    dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+});
+
+document.addEventListener('click', function(event) {
+    if (!dropdownInput.contains(event.target) && !dropdownMenu.contains(event.target)) {
+        dropdownMenu.style.display = 'none';
+    }
+});
+
+const dropdownItems = document.querySelectorAll('.dropdown-menu li');
+dropdownItems.forEach(item => {
+    item.addEventListener('click', function() {
+        dropdownInput.value = this.textContent;
+        dropdownMenu.style.display = 'none';
+    });
+});
