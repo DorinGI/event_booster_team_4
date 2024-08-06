@@ -52,3 +52,5 @@ dropdownItems.forEach(item => {
         dropdownMenu.style.display = 'none';
     });
 });
+
+// Choose Country
