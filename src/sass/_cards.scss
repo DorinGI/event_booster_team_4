@@ -1,25 +1,28 @@
-.cards {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
+.cards{
+    background-color: black;
 }
-
-.card {
-    border: 1px solid #ccc;
-    padding: 16px;
-    width: calc(25% - 32px);
-    box-sizing: border-box;
+.event-name {
+font-family: Montserrat;
+font-size: 16px;
+font-weight: 700;
+line-height: 19.5px;
+text-align: center;
+color: rgba(220, 86, 197, 1);
 }
-
-.card img {
-    max-width: 100%;
-    height: auto;
+.event-date{
+background: rgba(255, 255, 255, 1);
+font-family: Montserrat;
+font-size: 16px;
+font-weight: 400;
+line-height: 19.5px;
+text-align: center;
 }
-
-.card h3 {
-    margin: 8px 0;
-}
-
-.card p {
-    margin: 4px 0;
+.event-place{
+width: 59.3px;
+height: 17px;
+top: 1257px;
+left: 262px;
+gap: 0px;
+opacity: 0px;
+background: rgba(255, 255, 255, 1);
 }
