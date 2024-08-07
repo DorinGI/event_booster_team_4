@@ -11,12 +11,14 @@
     justify-content: center;
     align-items: center;
 }
-#modal-body{
+
+#modal-body {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
+
 .modal-content {
     position: relative;
     background-color: #fff;
@@ -26,7 +28,7 @@
     width: 1034px;
     height: 918px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    background: #fff2fd;;
+    background: #fff2fd;
 }
 
 .close {
@@ -42,38 +44,94 @@
     text-decoration: none;
     cursor: pointer;
 }
+
 .modal-logo {
     width: 132px;
     height: 132px;
     border-radius: 70px;
 }
+
 .modal-image {
     width: 427px;
     height: 326px;
 }
-.modal-title{
+
+.modal-title {
     font-family: var(--font-family);
     font-weight: 600;
     font-size: 24px;
     color: #dc56c5;
 }
-.modal-text{
+
+.modal-text {
     font-family: var(--font-family);
     font-weight: 400;
     font-size: 18px;
     color: #0e0e0e;
     width: 427px;
 }
-.modal-main{
+
+.modal-main {
     display: flex;
     margin-top: 40px;
 }
-.modal-main-text{
+
+.modal-main-text {
     display: flex;
     flex-direction: column;
     padding-left: 32px;
 }
-.modal-buy{
-    align-self: start;
-    margin-left: 45px;
+
+.modal-buy {
+    display: flex;
+    flex-direction: column;
+
+    align-items: start;
+}
+
+.button-grup {
+    display: flex;
+    gap: 50px;
+    margin-bottom: 20px;
+}
+
+.button-standard,
+.button-vip {
+    width: 145px;
+    height: 40px;
+    top: 753px;
+    left: 119;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #4c00fe;
+    border: 1px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button-standard:hover,
+.button-vip:hover {
+    background-color: #2E009A;
+}
+
+
+
+.button-more {
+    width: 224px;
+    height: 20px;
+    top: 1303px;
+    left: 522px;
+    line-height: 19.5px;
+    border-radius: 5px;
+    background-color: transparent;
+    border: 1px solid #4C00FE;
+    color: #dc56c5;
+}
+
+.button-more:hover {
+    background-color: #dc56c5;
+    color: #fff;
+
 }
