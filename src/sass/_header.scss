@@ -1,4 +1,4 @@
-// Choose Country Section
+/*Start Codul lui Cosmin - Choose Country Section
 .dropdown-container {
     position: absolute;
     top: 210px;
@@ -60,3 +60,198 @@
 }
 
 // Choose Country Section
+Stop Codul lui Cosmin - Choose Country Section*/
+/* Apply Montserrat font and general styling */
+body,
+html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Montserrat', sans-serif;
+}
+
+h1 {
+    font-weight: 900;
+    /* Montserrat Black */
+    font-size: 50px;
+    margin-top: 40px;
+}
+
+header {
+    position: relative;
+    width: 100%;
+    height: 446px;
+    background: url('header-bg.png') no-repeat center center/cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #ff4081;
+    text-align: center;
+}
+
+.logo {
+    position: absolute;
+    top: -20%;
+    left: -10%;
+    border-radius: 100%;
+    backdrop-filter: blur(30px);
+    background-size: auto;
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+}
+
+.logo-content1 {
+    position: relative;
+    top: 40%;
+    left: 20%;
+}
+
+.logo-content2 {
+    position: relative;
+    top: 40%;
+    left: 25%;
+}
+
+.logo-content2 img.move-up {
+    position: relative;
+    top: -3px;
+}
+
+.logo-content2 img.move-down {
+    position: relative;
+    top: 3px;
+}
+
+.search-container {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 3%;
+}
+
+.search-bar {
+    margin-top: 17%;
+    margin-left: -20%;
+    /*display: flex;
+    justify-content: center;*/
+}
+
+#country-box,
+#search-box {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    border-radius: 20px;
+    /*width: 270px;*/
+    margin-left: -25%;
+    width: 120%;
+    height: 36px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(20px);
+    border: 1px solid #ccc;
+}
+
+/* Change placeholder color, font size, and font weight for both input boxes */
+#country-box::placeholder,
+#search-box::placeholder {
+    color: #939393;
+    font-size: 16px;
+    font-weight: 400;
+    opacity: 1;
+}
+
+/* For better browser compatibility, add vendor prefixes */
+#country-box::-webkit-input-placeholder,
+#search-box::-webkit-input-placeholder {
+    color: #939393;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+#country-box::-moz-placeholder,
+#search-box::-moz-placeholder {
+    color: #939393;
+    font-size: 16px;
+    font-weight: 400;
+    opacity: 1;
+}
+
+#country-box::-ms-input-placeholder,
+#search-box::-ms-input-placeholder {
+    color: #939393;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+/* Start - Stilizarea lui Cosmin*/
+/* Choose Country Section*/
+.dropdown-container {
+    position: absolute;
+    /*top: 210px;*/
+    margin-top: 17%;
+    /*left: 656px;*/
+    left: 51%;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #939393;
+    /*width: 200px;*/
+    width: 10%;
+}
+
+#dropdown-input {
+    backdrop-filter: blur(20px);
+    background-color: rgba(255, 255, 255, 0.2);
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: rgb(147, 147, 147);
+    width: 270px;
+    height: 40px;
+    padding-left: 32px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.dropdown-icon {
+    position: absolute;
+    top: 50%;
+    right: -55px;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.dropdown-menu {
+    position: absolute;
+    width: 288px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border: 1px solid #ccc;
+    border-top: none;
+    border-radius: 0 0 4px 4px;
+    box-sizing: border-box;
+    background: white;
+    display: none;
+    z-index: 1;
+}
+
+.dropdown-menu li {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.dropdown-menu li:hover {
+    background-color: #f0f0f0;
+}
+
+/* Choose Country Section*/
+/* Stop - Stilizarea lui Cosmin*/
