@@ -1,7 +1,34 @@
-import EventsApi from './api.js';
 import { openModal } from './components/modal.js';
+import { createPagination } from './components/footer.js';
 
-const eventsApi = new EventsApi();
+const API_KEY = 'Z9sML3GkU2JtjpwYuKAphTWzMdRrsxCG';
+
+// Incarcarea cardurilor cu evenimente la deschiderea site-ului sau la reload
+document.addEventListener('DOMContentLoaded', function () {
+  loadPage(1); // Load the first page initially
+  createPagination(1); // Initialize pagination
+});
+
+// HTTP Request
+export async function loadPage(page) {
+  const content = document.querySelector('.cards');
+  content.innerHTML = ``;
+
+  try {
+    const response = await fetch(
+      `https://app.ticketmaster.com/discovery/v2/events?page=${page}&apikey=${API_KEY}`
+    );
+    const data = await response.json();
+    console.log(data);
+    if (data._embedded && data._embedded.events) {
+      displayEvents(data._embedded.events);
+    } else {
+      content.innerHTML = `<p>No data available for page ${page}.</p>`;
+    }
+  } catch (error) {
+    content.innerHTML = `<p>Error loading content for page ${page}.</p>`;
+  }
+}
 
 function displayEvents(events) {
   const cardsContainer = document.querySelector('.cards');
@@ -9,28 +36,15 @@ function displayEvents(events) {
     const card = document.createElement('div');
     card.className = 'card';
     card.innerHTML = `
-            <img class="event-image" src="${event.images[0].url}" alt="${event.name}">
-            <h3 class="event-name">${event.name}</h3>
-            <p class="event-date">${event.dates.start.localDate}</p>
-            <p class="event-place">${event._embedded.venues[0].name}</p>
-                `;
+             <img class="event-image" src="${event.images[0].url}" alt="${event.name}">
+             <h3 class="event-name">${event.name}</h3>
+             <p class="event-date">${event.dates.start.localDate}</p>
+             <p class="event-place">${event._embedded.venues[0].name}</p>
+                 `;
     card.addEventListener('click', () => openModal(event));
     cardsContainer.appendChild(card);
   });
 }
-
-eventsApi
-  .getEvents()
-  .then(data => {
-    if (data._embedded && data._embedded.events) {
-      displayEvents(data._embedded.events);
-    } else {
-      console.error('No events found');
-    }
-  })
-  .catch(error => {
-    console.error('There has been a problem with your fetch operation:', error);
-  });
 
 // Choose Country
 
