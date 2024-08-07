@@ -27,8 +27,25 @@ export function openModal(event) {
                     <p class="modal-text">${event.priceRanges[0].type || ''} ${
     event.priceRanges[0].min || ''
   }-${event.priceRanges[0].max || ''} ${event.priceRanges[0].currency || ''}</p>
-                </div>`;
+   <div class="button-grup">            
+  <button class="button-standard">BUY TICKETS</button>
+  <button class="button-vip">BUY TICKETS</button>
+  </div>
+  <button class="button-more">MORE FROM THIS AUTOR</button>
+   </div>
+   <div id="more-events-container></div>`;
+
   modal.style.display = 'flex';
+
+  document.querySelector('.button-standard').addEventListener('click', () => {
+    console.log('Standard Ticket');
+  });
+  document.querySelector('.button-vip').addEventListener('click', () => {
+    console.log(' Vip Ticket');
+  });
+  document
+    .querySelector('.button-more')
+    .addEventListener('click', loadMoreFromAutor);
 }
 
 export function closeModal() {
