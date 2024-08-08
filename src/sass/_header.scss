@@ -1,3 +1,4 @@
+
 /* Apply Montserrat font and general styling */
 body,
 html {
@@ -61,6 +62,8 @@ header {
     position: relative;
     top: 3px;
 }
+
+
 
 .search-container {
 
@@ -134,19 +137,14 @@ header {
 /* Start - Stilizarea lui Cosmin*/
 /* Choose Country Section*/
 .dropdown-container {
-    /*position: absolute;*/
-    /*top: 210px;*/
-    /*margin-top: 10%;*/
-    /*left: 656px;*/
-    /*margin-left: 110%;*/
-    /*margin-left: 0%;*/
-
+    position: absolute;
+    top: 212px;
+    left: 15px;
     font-family: "Montserrat", sans-serif;
     font-weight: 400;
     font-size: 16px;
     color: #939393;
-    /*width: 200px;*/
-    /*width: 3%;*/
+    width: 200px;
 }
 
 #dropdown-input {
@@ -155,10 +153,10 @@ header {
     font-family: "Montserrat", sans-serif;
     font-weight: 400;
     font-size: 16px;
-    color: rgb(147, 147, 147);
-    /*width: 270px;*/
+    color: #ffffff;
+    width: 280px;
     height: 40px;
-    /*padding-left: 32px;*/
+    padding-left: 32px;
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 20px;
@@ -176,7 +174,8 @@ header {
 
 .dropdown-menu {
     position: absolute;
-    width: 288px;
+    width: 280px;
+    max-height: 200px;
     margin: 0;
     padding: 0;
     list-style: none;
@@ -187,6 +186,7 @@ header {
     background: white;
     display: none;
     z-index: 1;
+    overflow-y: auto;
 }
 
 .dropdown-menu li {
@@ -210,64 +210,54 @@ header {
 }
 */
 //Start cod Cosmin - Choose Country Section
-.dropdown-container {
-    position: absolute;
-    top: 210px;
-    left: 656px;
-    font-family: "Montserrat", sans-serif;
-    font-weight: 400;
-    font-size: 16px;
-    color: #939393;
-    width: 200px;
-}
-
-#dropdown-input {
-    backdrop-filter: blur(20px);
-    background-color: rgba(255, 255, 255, 0.2);
-    font-family: "Montserrat", sans-serif;
-    font-weight: 400;
-    font-size: 16px;
-    color: rgb(147, 147, 147);
-    width: 288px;
-    height: 40px;
-    padding-left: 32px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 20px;
-    box-sizing: border-box;
-    cursor: pointer;
-}
-
-.dropdown-icon {
-    position: absolute;
-    top: 50%;
-    right: -55px;
-    transform: translateY(-50%);
-    pointer-events: none;
-}
-
-.dropdown-menu {
-    position: absolute;
-    width: 288px;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    border: 1px solid #ccc;
-    border-top: none;
-    border-radius: 0 0 4px 4px;
-    box-sizing: border-box;
-    background: white;
-    display: none;
-    z-index: 1;
-}
-
-.dropdown-menu li {
-    padding: 10px;
-    cursor: pointer;
-}
-
-.dropdown-menu li:hover {
-    background-color: #f0f0f0;
-}
+=======
+// Choose Country Section 
 
 // End cod Cosmin - Choose Country Section
+=======
+@media screen and (min-width: 768px) {
+.dropdown-icon{
+    right: -110px;
+}
+#dropdown-input {
+    width: 336px;
+}
+.container{
+    width: 768px;
+}
+.dropdown-menu{
+    width: 336px;
+}
+.dropdown-container{
+    top: 154px;
+    left: 400px;
+}
+.fundal{
+    width: 768px;
+    height: 364px;
+}
+}
+
+@media screen and (min-width: 1200px) {
+    .dropdown-icon{
+        right: -55px;
+    }
+#dropdown-input {
+width: 288px;
+}
+.container {
+    width: 1200px;
+}
+.dropdown-menu{
+    width: 288px;
+}
+.dropdown-container{
+    top: 210px;
+    left: 656px;
+}
+.fundal{
+    width: 1280px;
+    height: 446px;
+}
+}
+// Choose Country Section
