@@ -1,14 +1,42 @@
-import EventsApi from './api.js';
 import { openModal } from './components/modal.js';
+import { createPagination } from './components/footer.js';
 
-const eventsApi = new EventsApi();
+const API_KEY = 'Z9sML3GkU2JtjpwYuKAphTWzMdRrsxCG';
+
+// Incarcarea cardurilor cu evenimente la deschiderea site-ului sau la reload
+document.addEventListener('DOMContentLoaded', function () {
+  loadPage(1); // Load the first page initially
+  createPagination(1); // Initialize pagination
+});
+
+// HTTP Request
+export async function loadPage(page) {
+  const content = document.querySelector('.cards');
+  content.innerHTML = ``;
+
+  try {
+    const response = await fetch(
+      `https://app.ticketmaster.com/discovery/v2/events?page=${page}&apikey=${API_KEY}`
+    );
+    const data = await response.json();
+    console.log(data);
+    if (data._embedded && data._embedded.events) {
+      displayEvents(data._embedded.events);
+    } else {
+      content.innerHTML = `<p>No data available for page ${page}.</p>`;
+    }
+  } catch (error) {
+    content.innerHTML = `<p>Error loading content for page ${page}.</p>`;
+  }
+}
 
 function displayEvents(events) {
   const cardsContainer = document.querySelector('.cards');
   events.forEach(event => {
     const card = document.createElement('div');
     card.className = 'card';
-    <div class="card" data-id="${event.id}">
+    card.innerHTML = `
+             <div class="card" data-id="${event.id}">
       <div class="event-image">
         <img src= "${event.images[0].url}" alt="${event.name}" width="267">
         </div>
@@ -24,48 +52,58 @@ function displayEvents(events) {
           </p>
         </div>
       </div>
-    </div>
+    </div>`;
     card.addEventListener('click', () => openModal(event));
     cardsContainer.appendChild(card);
   });
 }
 
-eventsApi
-  .getEvents()
-  .then(data => {
-    if (data._embedded && data._embedded.events) {
-      displayEvents(data._embedded.events);
-    } else {
-      console.error('No events found');
-    }
-  })
-  .catch(error => {
-    console.error('There has been a problem with your fetch operation:', error);
-  });
-
 // Choose Country
+
 
 const dropdownInput = document.getElementById('dropdown-input');
 const dropdownMenu = document.querySelector('.dropdown-menu');
 
-dropdownInput.addEventListener('click', function () {
-  dropdownMenu.style.display =
-    dropdownMenu.style.display === 'block' ? 'none' : 'block';
+const eventsApi = {
+  countryCode: '',
+  page: 1,
+  resetPage() {
+    this.page = 1;
+  },
+  getEvents() {
+    return fetch(`https://app.ticketmaster.com/discovery/v2/events?countryCode=${this.countryCode}&page=${this.page}&apikey=${API_KEY}`)
+      .then(response => response.json());
+  }
+};
+dropdownInput.addEventListener('click', function() {
+    dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
 });
 
-document.addEventListener('click', function (event) {
-  if (
-    !dropdownInput.contains(event.target) &&
-    !dropdownMenu.contains(event.target)
-  ) {
-    dropdownMenu.style.display = 'none';
-  }
+document.addEventListener('click', function(event) {
+    if (!dropdownInput.contains(event.target) && !dropdownMenu.contains(event.target)) {
+        dropdownMenu.style.display = 'none';
+    }
 });
 
 const dropdownItems = document.querySelectorAll('.dropdown-menu li');
 dropdownItems.forEach(item => {
-  item.addEventListener('click', function () {
-    dropdownInput.value = this.textContent;
-    dropdownMenu.style.display = 'none';
-  });
+    item.addEventListener('click', function() {
+        dropdownInput.value = this.textContent;
+        dropdownMenu.style.display = 'none';
+        eventsApi.countryCode = this.getAttribute('data-value'); 
+        eventsApi.resetPage(); 
+        eventsApi.getEvents()
+            .then(data => {
+                if (data._embedded && data._embedded.events) {
+                    displayEvents(data._embedded.events);
+                } else {
+                    console.error('No events found');
+                }
+            })
+            .catch(error => {
+                console.error('There has been a problem with your fetch operation:', error);
+            });
+    });
 });
+
+// Choose Country
