@@ -63,8 +63,6 @@ header {
     top: 3px;
 }
 
-
-
 .search-container {
 
     position: fixed;
@@ -79,13 +77,13 @@ header {
     z-index: 100;
 }
 
-.search-bar {
-    /*margin-top: 10%;*/
-    /*margin-left: -150%;*/
-    /*margin-left: -120%;*/
-    /*display: flex;
-    justify-content: center;*/
-}
+// .search-bar {
+//     /*margin-top: 10%;*/
+//     /*margin-left: -150%;*/
+//     /*margin-left: -120%;*/
+//     /*display: flex;
+//     justify-content: center;*/
+// }
 
 #country-box,
 #search-box {
@@ -210,11 +208,9 @@ header {
 }
 */
 //Start cod Cosmin - Choose Country Section
-=======
 // Choose Country Section 
 
 // End cod Cosmin - Choose Country Section
-=======
 @media screen and (min-width: 768px) {
 .dropdown-icon{
     right: -110px;
@@ -239,9 +235,9 @@ header {
 }
 
 @media screen and (min-width: 1200px) {
-    .dropdown-icon{
-        right: -55px;
-    }
+.dropdown-icon{
+    right: -55px;
+}
 #dropdown-input {
 width: 288px;
 }
