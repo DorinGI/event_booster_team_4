@@ -1,48 +1,83 @@
-<!-- Start Searching Section -->
-
-<div class="search-header">
-  <input
-    placeholder="Start searching"
-    class="search-header__input"
-    type="text"
-  />
-  <button class="search-header__button">
-    <svg class="search-header__icon">
-      <use href="./images/symbol-defs.svg#vector"></use>
-    </svg>
-  </button>
-</div>
-
-<!-- Start Searching Section  -->
-
-<!-- Choose Country Section -->
-<div class="dropdown-container">
-  <input
-    type="text"
-    placeholder="Choose country"
-    id="dropdown-input"
-    readonly
-  />
-  <div class="dropdown-icon">
-    <svg
-      width="13"
-      height="8"
-      viewBox="0 0 13 8"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path d="M6.5 8L0.00480968 0.5L12.9952 0.499999L6.5 8Z" fill="#939393" />
-    </svg>
+<header>
+  <div class="logo">
+    <div class="logo-content1">
+      <img src="E.svg" alt="E" />
+      <img src="V.svg" alt="V" />
+      <img src="E.svg" alt="E" />
+      <img src="N.svg" alt="N" />
+      <img src="T.svg" alt="T" />
+    </div>
+    <div class="logo-content2">
+      <img src="B.svg" alt="B" />
+      <img class="move-up" src="O1.svg" alt="O" />
+      <img class="move-down" src="O2.svg" alt="O" />
+      <img src="S.svg" alt="S" />
+      <img src="T.svg" alt="T" />
+      <img src="E.svg" alt="E" />
+      <img src="R.svg" alt="R" />
+    </div>
   </div>
-  <ul class="dropdown-menu">
-    <li data-value="us">United States</li>
-    <li data-value="ca">Canada</li>
-    <li data-value="gb">United Kingdom</li>
-    <li data-value="mx">Mexico</li>
-    <li data-value="au">Australia</li>
-    <li data-value="nz">New Zealand</li>
-    <li data-value="ir">Ireland</li>
-    <li data-value="oc">Other Countries</li>
-  </ul>
-</div>
-<!-- Choose Country Section -->
+  <h1>FIND BEST EVENTS <br />AROUND THE WORLD</h1>
+  <div class="search-container">
+    <div class="search-bar">
+      <input type="text" placeholder="   Start searching" id="search-box" />
+    </div>
+    <!-- Comentez codul meu si sub el il introduc pe al lui Cosmin
+        <div class="search-bar">
+          <input type="text" placeholder="   Choose country" id="country-box" />
+        </div>-->
+    <!-- Start cod Cosmin -->
+    <!-- Start Searching Section -->
+
+    <div class="search-header">
+      <input
+        placeholder="Start searching"
+        class="search-header__input"
+        type="text"
+      />
+      <button class="search-header__button">
+        <svg class="search-header__icon">
+          <use href="./images/symbol-defs.svg#vector"></use>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Start Searching Section  -->
+
+    <!-- Choose Country Section -->
+    <div class="dropdown-container">
+      <input
+        type="text"
+        placeholder="Choose country"
+        id="dropdown-input"
+        readonly
+      />
+      <div class="dropdown-icon">
+        <svg
+          width="13"
+          height="8"
+          viewBox="0 0 13 8"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M6.5 8L0.00480968 0.5L12.9952 0.499999L6.5 8Z"
+            fill="#939393"
+          />
+        </svg>
+      </div>
+      <ul class="dropdown-menu">
+        <li data-value="us">United States</li>
+        <li data-value="ca">Canada</li>
+        <li data-value="gb">United Kingdom</li>
+        <li data-value="mx">Mexico</li>
+        <li data-value="au">Australia</li>
+        <li data-value="nz">New Zealand</li>
+        <li data-value="ir">Ireland</li>
+        <li data-value="oc">Other Countries</li>
+      </ul>
+    </div>
+    <!-- Choose Country Section -->
+    <!-- End cod Cosmin -->
+  </div>
+</header>
