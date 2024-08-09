@@ -1,4 +1,17 @@
 @import '~node_modules/modern-normalize/modern-normalize.css';
 :root {
     --font-family: "Montserrat", sans-serif;
+    --main-body-color: #000000;
+    --card-body-color: #fff2fd;
+    --body-decoration-el-color: #212121;
+    --card-button-color: #4c00fe;
+    --field-background-color: rgba(255, 255, 255, 0.2);
+    --header-gradient-color: rgba(11, 11, 11, 0.5);
+    --main-pulsar-color: #ff00de;
+    --main-text-color: #ffffff;
+    --secondary-text-color: #939393;
+    --hero-text-color: #dc56c5;
+    --card-paragraph-text: #0e0e0e;
+    --rose-border-color: rgba(220, 86, 197, 0.3);
+    --timing-function: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
