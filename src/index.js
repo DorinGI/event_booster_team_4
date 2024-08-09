@@ -58,3 +58,38 @@ dropdownItems.forEach(item => {
     dropdownMenu.style.display = 'none';
   });
 });
+
+
+// -------------------INPUT START-SEARCHING-------------------------
+
+
+document.getElementById('searchForm').addEventListener('submit', function (e) {
+  e.preventDefault(); 
+
+  const keyword = document.getElementById('searchInput').value.trim();
+  if (keyword) {
+    searchEvents(keyword);
+  }
+});
+
+async function searchEvents(keyword) {
+  const content = document.querySelector('.cards');
+  content.innerHTML = `<p>Searching for "${keyword}"...</p>`;
+
+  try {
+    const response = await fetch(
+      `https://app.ticketmaster.com/discovery/v2/events?keyword=${keyword}&apikey=Z9sML3GkU2JtjpwYuKAphTWzMdRrsxCG`
+    );
+    const data = await response.json();
+
+    if (data._embedded && data._embedded.events) {
+      displayEvents(data._embedded.events);
+    } else {
+      content.innerHTML = `<p>No results found for "${keyword}".</p>`;
+    }
+  } catch (error) {
+    content.innerHTML = `<p>Error searching for "${keyword}". Please try again later.</p>`;
+  }
+}
+
+// -------------------------------------------------------------------------------------
