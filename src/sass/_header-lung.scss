@@ -1,0 +1,668 @@
+/* Apply Montserrat font and general styling */
+/*body,
+html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+}
+
+h1 {
+    font-weight: 900;
+    // Montserrat Black 
+    font-size: 50px;
+    margin-top: 0.5%;
+}
+
+header {
+    position: relative;
+    width: 100%;
+    height: 446px;
+    background: url('header-bg.png') no-repeat center center/cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #ff4081;
+    text-align: center;
+}
+
+.logo {
+    position: absolute;
+    top: -20%;
+    left: -10%;
+    border-radius: 100%;
+    backdrop-filter: blur(30px);
+    background-size: auto;
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+}
+
+.logo-content1 {
+    position: relative;
+    top: 40%;
+    left: 20%;
+}
+
+.logo-content2 {
+    position: relative;
+    top: 40%;
+    left: 25%;
+}
+
+.logo-content2 img.move-up {
+    position: relative;
+    top: -3px;
+}
+
+.logo-content2 img.move-down {
+    position: relative;
+    top: 3px;
+}
+
+.search-container {
+
+    position: fixed;
+    top: 25%;
+    width: 100%;
+    //transform: translate(0%, -25%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 23%;
+    z-index: 100;
+}
+*/
+.search-bar {
+    /*margin-top: 10%;*/
+    /*margin-left: -150%;*/
+    /*margin-left: -120%;*/
+    /*display: flex;
+    justify-content: center;*/
+}
+
+/*#country-box,
+#search-box {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    border-radius: 20px;
+    //width: 270px;
+    //margin-left: -7%;
+    //width: 90%;
+    height: 36px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(20px);
+    border: 1px solid #ccc;
+}*/
+#dropdown-input, #search-box {
+    backdrop-filter: blur(20px);
+    background-color: rgba(255, 255, 255, 0.2);
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: rgb(147, 147, 147);
+    /*width: 270px;*/
+    height: 40px;
+    /*padding-left: 32px;*/
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+/* Change placeholder color, font size, and font weight for both input boxes */
+#country-box::placeholder,
+#search-box::placeholder,
+#dropdown-input::placeholder {
+    color: #939393;
+    font-size: 16px;
+    font-weight: 400;
+    opacity: 1;
+}
+
+/* For better browser compatibility, add vendor prefixes */
+#country-box::-webkit-input-placeholder,
+#search-box::-webkit-input-placeholder,
+#dropdown-input::-webkit-placeholder {
+    color: #939393;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+#country-box::-moz-placeholder,
+#search-box::-moz-placeholder,
+#dropdown-input::-moz-placeholder {
+    color: #939393;
+    font-size: 16px;
+    font-weight: 400;
+    opacity: 1;
+}
+
+#country-box::-ms-input-placeholder,
+#search-box::-ms-input-placeholder,
+#dropdown-input::-ms-placeholder {
+    color: #939393;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+/* Start - Stilizarea lui Cosmin*/
+/* Choose Country Section*/
+.dropdown-container {
+    /*position: absolute;*/
+    /*top: 210px;*/
+    /*margin-top: 10%;*/
+    /*left: 656px;*/
+    /*margin-left: 110%;*/
+    /*margin-left: 0%;*/
+
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #939393;
+    /*width: 200px;*/
+    /*width: 3%;*/
+}
+
+.dropdown-icon {
+    position: absolute;
+    top: 50%;
+    right: -55px;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.dropdown-menu {
+    position: absolute;
+    width: 288px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border: 1px solid #ccc;
+    border-top: none;
+    border-radius: 0 0 4px 4px;
+    box-sizing: border-box;
+    background: white;
+    display: none;
+    z-index: 1;
+}
+
+.dropdown-menu li {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.dropdown-menu li:hover {
+    background-color: #f0f0f0;
+}
+
+/* Choose Country Section*/
+/* Stop - Stilizarea lui Cosmin*/
+
+/*.search-bar,
+.dropdown-container {
+    flex: 1;
+     Allows the children to grow and shrink equally
+    display: flex;
+    justify-content: center;
+}
+*/
+@media screen and (min-width: 768px) {
+    .search-container {
+
+        position: fixed;
+        top: 25%;
+        width: 100%;
+        /*transform: translate(0%, -25%);*/
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 23%;
+        z-index: 100;
+    }
+
+}
+/*--------------------------------------------------------*/
+/* Apply Montserrat font and general styling */
+body,
+html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+}
+
+.search-header,
+.container1,
+.dropdown-container,
+.search-header__input,
+#dropdown-input {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-weight: 900;
+    /* Montserrat Black */
+    font-size: 18px;
+    margin-top: 10%;
+}
+
+header {
+    //position: relative;
+    width: 100%;
+    height: 364px;
+    background: url('../images/header-bg-m.png') no-repeat center center/cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #ff4081;
+    text-align: center;
+}
+
+.logo {
+    position: absolute;
+    top: -20%;
+    left: -10%;
+    border-radius: 100%;
+    backdrop-filter: blur(30px);
+    background-size: auto;
+    /*width: 300px;
+    height: 300px;*/
+    width: 30%;
+    height: 50%;
+    overflow: hidden;
+}
+
+.logo-content1 {
+    position: relative;
+    //top: 40%;
+    top: 45%;
+    left: 20%;
+}
+
+.logo-content2 {
+    position: relative;
+    top: 45%;
+    left: 20%;
+}
+
+.logo-content2 img.move-up {
+    position: relative;
+    top: -3px;
+}
+
+.logo-content2 img.move-down {
+    position: relative;
+    top: 3px;
+}
+
+.search-container {
+    //position:fixed;
+    //top: 25%;
+    width: 100%;
+    /*transform: translate(0%, -25%);*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    //gap: 23%;
+   // z-index: 100;    
+}
+.search-header {
+    order: 1;
+}
+
+.dropdown-container {
+    order: 2;
+}
+
+// .search-bar {
+//     /*margin-top: 10%;*/
+//     /*margin-left: -150%;*/
+//     /*margin-left: -120%;*/
+//     /*display: flex;
+//     justify-content: center;*/
+// }
+//.search-header {
+///
+//}
+
+#country-box,
+#search-box {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    border-radius: 20px;
+    width: 270px;
+    /*margin-left: -7%;*/
+    /*width: 90%;*/
+    height: 40px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(20px);
+    border: 1px solid #ccc;
+}
+
+/* Change placeholder color, font size, and font weight for both input boxes */
+#country-box::placeholder,
+#search-box::placeholder,
+#dropdown-input::placeholder {
+    color: #939393;
+    font-size: 16px;
+    font-weight: 400;
+    opacity: 1;
+}
+
+/* For better browser compatibility, add vendor prefixes */
+#country-box::-webkit-input-placeholder,
+#search-box::-webkit-input-placeholder,
+#dropdown-input::-webkit-placeholder {
+    color: #939393;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+#country-box::-moz-placeholder,
+#search-box::-moz-placeholder,
+#dropdown-input::-moz-placeholder {
+    color: #939393;
+    font-size: 16px;
+    font-weight: 400;
+    opacity: 1;
+}
+
+#country-box::-ms-input-placeholder,
+#search-box::-ms-input-placeholder,
+#dropdown-input::-ms-placeholder {
+    color: #939393;
+    font-size: 16px;
+    font-weight: 400;
+}
+.logo-content1 img,
+.logo-content2 img {
+    margin-right: -3px;
+    // Negative margin to bring letters closer
+}
+
+.logo-content2 img.move-up,
+.logo-content2 img.move-down {
+    margin-right: -3px;
+    // Ensure consistency for moved images
+}
+
+/* Start - Stilizarea lui Cosmin*/
+/* Choose Country Section*/
+.dropdown-container {
+   // position: fixed;
+   // position: relative;
+    //position: absolute;
+   /* top: 212px;
+    left: 15px;*/
+
+    //margin-left: 20%;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #939393;
+    width: 270px;
+
+}
+
+#dropdown-input {
+    backdrop-filter: blur(20px);
+    background-color: rgba(255, 255, 255, 0.2);
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #ffffff;
+    width: 270px;
+    height: 40px;
+    padding-left: 32px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+//.dropdown-icon {
+    //position: absolute;
+  //  top: 50%;
+    //margin-right: -80%;
+    //margin-top: -8%;
+    //transform: translateY(-50%);
+    //pointer-events: none;
+//}
+
+.dropdown-menu {
+   // position: absolute;
+    width: 270px;
+    max-height: 200px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border: 1px solid #ccc;
+    border-top: none;
+    border-radius: 0 0 4px 4px;
+    box-sizing: border-box;
+    background: white;
+    display: none;
+    //z-index: 1;
+    overflow-y: auto;
+}
+
+.dropdown-menu li {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.dropdown-menu li:hover {
+    background-color: #f0f0f0;
+}
+
+/* Choose Country Section*/
+/* Stop - Stilizarea lui Cosmin*/
+
+/*.search-bar,
+.dropdown-container {
+    flex: 1;
+     Allows the children to grow and shrink equally
+    display: flex;
+    justify-content: center;
+}
+*/
+//Start cod Cosmin - Choose Country Section
+// Choose Country Section 
+
+// End cod Cosmin - Choose Country Section
+/*@media screen and (min-width: 768px) {
+.dropdown-icon{
+    right: -110px;
+}
+#dropdown-input {
+    width: 336px;
+}
+.container{
+    width: 768px;
+}
+.dropdown-menu{
+    width: 336px;
+}
+.dropdown-container{
+    top: 154px;
+    left: 400px;
+}
+/*.search-container {
+    flex-direction: row;
+}
+}
+
+@media screen and (min-width: 1280px) {
+.dropdown-icon{
+    right: -55px;
+}
+#dropdown-input {
+width: 288px;
+}
+.container {
+    width: 1200px;
+}
+.dropdown-menu{
+    width: 288px;
+}
+.dropdown-container{
+    top: 210px;
+    left: 656px;
+}
+}
+// Choose Country Section
+
+//modificari din 09-aug-2024
+/* Default fallback for small screens */
+#responsive-image-e {
+    content: url('../images/e-m.svg');
+}
+#responsive-image-v {
+    content: url('../images/v-m.svg');
+}
+#responsive-image-n {
+    content: url('../images/n-m.svg');
+}
+#responsive-image-t {
+    content: url('../images/t-m.svg');
+}
+#responsive-image-b {
+    content: url('../images/b-m.svg');
+}
+#responsive-image-o1 {
+    content: url('../images/o1-m.svg');
+}
+#responsive-image-o2 {
+    content: url('../images/o2-m.svg');
+}
+#responsive-image-s {
+    content: url('../images/s-m.svg');
+}
+#responsive-image-r {
+    content: url('../images/r-m.svg');
+}
+/* Fallback for screens between 768px and 1279px */
+@media screen and (min-width: 768px) {
+    #responsive-image-e {
+        content: url('../images/e-t.svg');
+    }
+    #responsive-image-v {
+        content: url('../images/v-t.svg');
+    }
+    #responsive-image-n {
+        content: url('../images/n-t.svg');
+    }
+    #responsive-image-t {
+        content: url('../images/t-t.svg');
+    }
+    #responsive-image-b {
+        content: url('../images/b-t.svg');
+    }
+    #responsive-image-o1 {
+        content: url('../images/o1-t.svg');
+    }
+    #responsive-image-o2 {
+        content: url('../images/o2-t.svg');
+    }
+    #responsive-image-s {
+        content: url('../images/s-t.svg');
+    }
+    #responsive-image-r {
+        content: url('../images/r-t.svg');
+    }
+
+    h1 {
+        font-size: 30px;
+        margin-top: 0.5%;
+    }
+
+    header {
+        background: url('../images/header-bg-t.png') no-repeat center center/cover;
+    }
+        logo-content1 img,
+        .logo-content2 img {
+            margin-right: -5px;
+            // Negative margin to bring letters closer
+        }
+    
+        .logo-content2 img.move-up,
+        .logo-content2 img.move-down {
+            margin-right: -5px;
+            // Ensure consistency for moved images
+        }
+
+        .search-container {
+            //position: fixed;
+            //top: 25%;
+            width: 100%;
+            /*transform: translate(0%, -25%);*/
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            //  gap: 2%;
+            //z-index: 100;
+        }
+ 
+}
+
+/* Fallback for screens 1280px and above */
+@media screen and (min-width: 1280px) {
+    #responsive-image-e {
+        content: url('../images/e.svg');
+    }
+    #responsive-image-v {
+        content: url('../images/v.svg');
+    }
+    #responsive-image-n {
+        content: url('../images/n.svg');
+    }
+    #responsive-image-t {
+        content: url('../images/t.svg');
+    }
+    #responsive-image-b {
+        content: url('../images/b.svg');
+    }
+    #responsive-image-o1 {
+        content: url('../images/o1.svg');
+    }
+    #responsive-image-o2 {
+        content: url('../images/o2.svg');
+    }
+    #responsive-image-s {
+        content: url('../images/s.svg');
+    }
+    #responsive-image-r {
+        content: url('../images/r.svg');
+    }
+    h1 {
+        font-size: 50px;
+    }
+    header {
+        height: 446px;
+        background: url('../images/header-bg.png') no-repeat center center/cover;
+    }
+      /*  .logo-content1 img,
+        .logo-content2 img {
+            margin-right: -2px;
+            // Negative margin to bring letters closer
+        }
+    
+        .logo-content2 img.move-up,
+        .logo-content2 img.move-down {
+            margin-right: -2px;
+            // Ensure consistency for moved images
+        }*/
+}

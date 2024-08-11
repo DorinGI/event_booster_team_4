@@ -1,69 +1,117 @@
-
-/* Apply Montserrat font and general styling */
-body,
-html {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    font-family: 'Montserrat', sans-serif;
-    overflow-x: hidden;
+#dropdown-input,
+#search-box {
+  backdrop-filter: blur(20px);
+  background-color: rgba(255, 255, 255, 0.2);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: rgb(147, 147, 147);
+  /*width: 270px;*/
+  height: 40px;
+  /*padding-left: 32px;*/
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  box-sizing: border-box;
+  cursor: pointer;
 }
 
-h1 {
-    font-weight: 900;
-    /* Montserrat Black */
-    font-size: 50px;
-    margin-top: 0.5%;
+/* Change placeholder color, font size, and font weight for both input boxes */
+#country-box::placeholder,
+#search-box::placeholder,
+#dropdown-input::placeholder {
+  color: #939393;
+  font-size: 16px;
+  font-weight: 400;
+  opacity: 1;
 }
 
-header {
-    position: relative;
-    width: 100%;
-    height: 446px;
-    background: url('../images/header-bg.png') no-repeat center center/cover;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: #ff4081;
-    text-align: center;
+/* For better browser compatibility, add vendor prefixes */
+#country-box::-webkit-input-placeholder,
+#search-box::-webkit-input-placeholder,
+#dropdown-input::-webkit-placeholder {
+  color: #939393;
+  font-size: 16px;
+  font-weight: 400;
 }
 
-.logo {
-    position: absolute;
-    top: -20%;
-    left: -10%;
-    border-radius: 100%;
-    backdrop-filter: blur(30px);
-    background-size: auto;
-    width: 300px;
-    height: 300px;
-    overflow: hidden;
+#country-box::-moz-placeholder,
+#search-box::-moz-placeholder,
+#dropdown-input::-moz-placeholder {
+  color: #939393;
+  font-size: 16px;
+  font-weight: 400;
+  opacity: 1;
 }
 
-.logo-content1 {
-    position: relative;
-    top: 40%;
-    left: 20%;
+#country-box::-ms-input-placeholder,
+#search-box::-ms-input-placeholder,
+#dropdown-input::-ms-placeholder {
+  color: #939393;
+  font-size: 16px;
+  font-weight: 400;
 }
 
-.logo-content2 {
-    position: relative;
-    top: 40%;
-    left: 25%;
+.dropdown-container {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: #939393;
 }
 
-.logo-content2 img.move-up {
-    position: relative;
-    top: -3px;
+.dropdown-icon {
+  position: absolute;
+  top: 50%;
+  right: -55px;
+  transform: translateY(-50%);
+  pointer-events: none;
 }
 
-.logo-content2 img.move-down {
-    position: relative;
-    top: 3px;
+.dropdown-menu {
+  position: absolute;
+  width: 288px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border: 1px solid #ccc;
+  border-top: none;
+  border-radius: 0 0 4px 4px;
+  box-sizing: border-box;
+  background: white;
+  display: none;
+  z-index: 1;
+}
+
+.dropdown-menu li {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.dropdown-menu li:hover {
+  background-color: #f0f0f0;
 }
 
 .search-container {
+  position: relative;
+  margin-top: 25px;
+  margin-bottom: 20%;
+}
+.search-bar {
+  //margin-top: 25px;
+  margin-bottom: 10%;
+}
+
+.logo-content2 img.move-up {
+  position: relative;
+  top: -2px;
+}
+
+.logo-content2 img.move-down {
+  position: relative;
+  top: 2px;
+}
+@media screen and (min-width: 768px) {
+  .search-container {
     top: 25%;
     width: 100%;
     /*transform: translate(0%, -25%);*/
@@ -73,185 +121,344 @@ header {
     justify-content: center;
     gap: 23%;
     z-index: 100;
+  }
 }
 
-// .search-bar {
-//     /*margin-top: 10%;*/
-//     /*margin-left: -150%;*/
-//     /*margin-left: -120%;*/
-//     /*display: flex;
-//     justify-content: center;*/
-// }
+/*--------------------------------------------------------*/
+/* Apply Montserrat font and general styling */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: 'Montserrat', sans-serif;
+  overflow-x: hidden;
+}
+
+.search-header,
+.container1,
+.dropdown-container,
+.search-header__input,
+#dropdown-input {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-weight: 900;
+  /* Montserrat Black */
+  font-size: 18px;
+  margin-top: 10%;
+}
+
+header {
+  //position: relative;
+  width: 100%;
+  height: 364px;
+  background: url('../images/header-bg-m.png') no-repeat center center/cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #ff4081;
+  text-align: center;
+}
+
+.logo {
+  position: absolute;
+  top: -20%;
+  left: -10%;
+  border-radius: 100%;
+  backdrop-filter: blur(30px);
+  background-size: auto;
+  /*width: 300px;
+    height: 300px;*/
+  width: 30%;
+  height: 50%;
+  overflow: hidden;
+}
+
+.logo-content1 {
+  position: relative;
+  //top: 40%;
+  top: 45%;
+  left: 20%;
+}
+
+.logo-content2 {
+  position: relative;
+  top: 45%;
+  left: 20%;
+}
+
+.search-container {
+  //position: relative;
+  //top: 25%;
+  width: 100%;
+  /*transform: translate(0%, -25%);*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 
 #country-box,
 #search-box {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 16px;
-    font-weight: 400;
-    border-radius: 20px;
-    /*width: 270px;*/
-    /*margin-left: -7%;*/
-    /*width: 90%;*/
-    height: 36px;
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(20px);
-    border: 1px solid #ccc;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  border-radius: 20px;
+  width: 270px;
+  /*margin-left: -7%;*/
+  /*width: 90%;*/
+  height: 40px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(20px);
+  border: 1px solid #ccc;
 }
 
-/* Change placeholder color, font size, and font weight for both input boxes */
-#country-box::placeholder,
-#search-box::placeholder {
-    color: #939393;
-    font-size: 16px;
-    font-weight: 400;
-    opacity: 1;
+.logo-content1 img,
+.logo-content2 img {
+  margin-right: -3px;
 }
-
-/* For better browser compatibility, add vendor prefixes */
-#country-box::-webkit-input-placeholder,
-#search-box::-webkit-input-placeholder {
-    color: #939393;
-    font-size: 16px;
-    font-weight: 400;
+// Negative margin to bring letters closer}
+.logo-content2 img.move-up,
+.logo-content2 img.move-down {
+  margin-right: -3px;
 }
-
-#country-box::-moz-placeholder,
-#search-box::-moz-placeholder {
-    color: #939393;
-    font-size: 16px;
-    font-weight: 400;
-    opacity: 1;
-}
-
-#country-box::-ms-input-placeholder,
-#search-box::-ms-input-placeholder {
-    color: #939393;
-    font-size: 16px;
-    font-weight: 400;
-}
-
+// Ensure consistency for moved images}
 /* Start - Stilizarea lui Cosmin*/
 /* Choose Country Section*/
 .dropdown-container {
-    position: absolute;
-    top: 212px;
-    left: 15px;
-    font-family: "Montserrat", sans-serif;
-    font-weight: 400;
-    font-size: 16px;
-    color: #939393;
-    width: 200px;
+  position: relative;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: #939393;
+  width: 270px;
+}
+
+.search-bar::after {
+  content: '';
+  position: absolute;
+  right: 10px; /* Position the icon on the right inside the search bar */
+  top: 50%;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 12px;
+  background-image: url('data:image/svg+xml;utf8,<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.509 1.50905C2.48213 0.535922 3.77595 0 5.15213 0C6.52831 0 7.82213 0.535922 8.79523 1.50905C9.76833 2.48215 10.3043 3.77597 10.3043 5.15213C10.3043 6.41032 9.85606 7.59949 9.03556 8.53786L11.8969 11.3992C12.0343 11.5366 12.0343 11.7595 11.8969 11.8969C11.8282 11.9656 11.7381 12 11.648 12C11.558 12 11.4679 11.9656 11.3992 11.8969L8.53786 9.03558C7.59949 9.85606 6.41032 10.3043 5.15213 10.3043C3.77592 10.3043 2.48215 9.76838 1.50902 8.79525C0.535922 7.82215 9.53674e-07 6.52833 9.53674e-07 5.15215C9.53674e-07 3.77597 0.535899 2.48215 1.509 1.50905ZM2.00672 8.29755C3.74112 10.0319 6.56311 10.0319 8.29751 8.29755C10.0319 6.56318 10.0319 3.74114 8.29751 2.00677C7.43023 1.13948 6.29135 0.705984 5.1521 0.705984C4.01313 0.705984 2.87379 1.1397 2.0067 2.00677C0.272367 3.74112 0.272367 6.56316 2.00672 8.29755Z" fill="%23939393"/></svg>');
+  background-size: contain;
+  background-repeat: no-repeat;
+  pointer-events: none; /* Ensure the icon does not block interaction with the input */
+}
+
+.dropdown-container::after {
+  content: '';
+  position: absolute;
+  right: 10px; /* Position the icon on the right inside the dropdown */
+  top: 50%;
+  transform: translateY(-50%);
+  width: 13px;
+  height: 8px;
+  background-image: url('data:image/svg+xml;utf8,<svg width="13" height="8" viewBox="0 0 13 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.5 8L0.00480968 0.5L12.9952 0.499999L6.5 8Z" fill="%23939393"/></svg>');
+  background-size: contain;
+  background-repeat: no-repeat;
+  pointer-events: none;
 }
 
 #dropdown-input {
-    backdrop-filter: blur(20px);
-    background-color: rgba(255, 255, 255, 0.2);
-    font-family: "Montserrat", sans-serif;
-    font-weight: 400;
-    font-size: 16px;
-    color: #ffffff;
-    width: 280px;
-    height: 40px;
-    padding-left: 32px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 20px;
-    box-sizing: border-box;
-    cursor: pointer;
+  backdrop-filter: blur(20px);
+  background-color: rgba(255, 255, 255, 0.2);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: #ffffff;
+  width: 270px;
+  height: 40px;
+  padding-left: 32px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  box-sizing: border-box;
+  cursor: pointer;
 }
-
-.dropdown-icon {
-    position: absolute;
-    top: 50%;
-    right: -55px;
-    transform: translateY(-50%);
-    pointer-events: none;
-}
-
 .dropdown-menu {
-    position: absolute;
-    width: 280px;
-    max-height: 200px;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    border: 1px solid #ccc;
-    border-top: none;
-    border-radius: 0 0 4px 4px;
-    box-sizing: border-box;
-    background: white;
-    display: none;
-    z-index: 1;
-    overflow-y: auto;
+  // position: absolute;
+  width: 270px;
+  max-height: 200px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border: 1px solid #ccc;
+  border-top: none;
+  border-radius: 0 0 4px 4px;
+  box-sizing: border-box;
+  background: white;
+  display: none;
+  //z-index: 1;
+  overflow-y: auto;
 }
 
-.dropdown-menu li {
-    padding: 10px;
-    cursor: pointer;
+//modificari din 09-aug-2024
+/* Default fallback for small screens */
+#responsive-image-e {
+  content: url('../images/e-m.svg');
 }
 
-.dropdown-menu li:hover {
-    background-color: #f0f0f0;
+#responsive-image-v {
+  content: url('../images/v-m.svg');
 }
 
-/* Choose Country Section*/
-/* Stop - Stilizarea lui Cosmin*/
-
-/*.search-bar,
-.dropdown-container {
-    flex: 1;
-     Allows the children to grow and shrink equally
-    display: flex;
-    justify-content: center;
+#responsive-image-n {
+  content: url('../images/n-m.svg');
 }
-*/
-//Start cod Cosmin - Choose Country Section
-// Choose Country Section 
 
-// End cod Cosmin - Choose Country Section
+#responsive-image-t {
+  content: url('../images/t-m.svg');
+}
+
+#responsive-image-b {
+  content: url('../images/b-m.svg');
+}
+
+#responsive-image-o1 {
+  content: url('../images/o1-m.svg');
+}
+
+#responsive-image-o2 {
+  content: url('../images/o2-m.svg');
+}
+
+#responsive-image-s {
+  content: url('../images/s-m.svg');
+}
+
+#responsive-image-r {
+  content: url('../images/r-m.svg');
+}
+
+/* Fallback for screens between 768px and 1279px */
 @media screen and (min-width: 768px) {
-.dropdown-icon{
-    right: -110px;
-}
-#dropdown-input {
-    width: 336px;
-}
-.container{
-    width: 768px;
-}
-.dropdown-menu{
-    width: 336px;
-}
-.dropdown-container{
-    top: 154px;
-    left: 400px;
-}
-.fundal{
-    width: 768px;
-    height: 364px;
-}
-}
+  #responsive-image-e {
+    content: url('../images/e-t.svg');
+  }
 
+  #responsive-image-v {
+    content: url('../images/v-t.svg');
+  }
+
+  #responsive-image-n {
+    content: url('../images/n-t.svg');
+  }
+
+  #responsive-image-t {
+    content: url('../images/t-t.svg');
+  }
+
+  #responsive-image-b {
+    content: url('../images/b-t.svg');
+  }
+
+  #responsive-image-o1 {
+    content: url('../images/o1-t.svg');
+  }
+
+  #responsive-image-o2 {
+    content: url('../images/o2-t.svg');
+  }
+
+  #responsive-image-s {
+    content: url('../images/s-t.svg');
+  }
+
+  #responsive-image-r {
+    content: url('../images/r-t.svg');
+  }
+
+  h1 {
+    font-size: 30px;
+    margin-top: 0.5%;
+  }
+
+  header {
+    background: url('../images/header-bg-t.png') no-repeat center center/cover;
+  }
+
+  .logo-content1 img,
+  .logo-content2 img {
+    margin-right: -5px;
+  }
+  // Negative margin to bring letters closer}
+  .logo-content2 img.move-up,
+  .logo-content2 img.move-down {
+    margin-right: -5px;
+  }
+  // Ensure consistency for moved images}
+  .search-container {
+    //position: fixed;
+    //top: 25%;
+    width: 100%;
+    /*transform: translate(0%, -25%);*/
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    //  gap: 2%;
+    //z-index: 100;
+  }
+  .search-bar {
+    position: relative;
+    margin-bottom: 0;
+  }
+}
+/* Fallback for screens 1280px and above */
 @media screen and (min-width: 1280px) {
-.dropdown-icon{
-    right: -55px;
-}
-#dropdown-input {
-width: 288px;
-}
-.container {
-    width: 1200px;
-}
-.dropdown-menu{
-    width: 288px;
-}
-.dropdown-container{
-    top: 210px;
-    left: 656px;
-}
-.fundal{
-    width: 1280px;
+  .search-container {
+    margin-top: 6%;
+  }
+  #responsive-image-e {
+    content: url('../images/e.svg');
+  }
+
+  #responsive-image-v {
+    content: url('../images/v.svg');
+  }
+
+  #responsive-image-n {
+    content: url('../images/n.svg');
+  }
+
+  #responsive-image-t {
+    content: url('../images/t.svg');
+  }
+
+  #responsive-image-b {
+    content: url('../images/b.svg');
+  }
+
+  #responsive-image-o1 {
+    content: url('../images/o1.svg');
+  }
+
+  #responsive-image-o2 {
+    content: url('../images/o2.svg');
+  }
+
+  #responsive-image-s {
+    content: url('../images/s.svg');
+  }
+
+  #responsive-image-r {
+    content: url('../images/r.svg');
+  }
+
+  h1 {
+    font-size: 50px;
+  }
+
+  header {
     height: 446px;
+    background: url('../images/header-bg.png') no-repeat center center/cover;
+  }
 }
-}
-// Choose Country Section
