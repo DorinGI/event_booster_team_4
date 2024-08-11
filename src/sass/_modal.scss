@@ -24,84 +24,118 @@
   background-color: #fff;
   padding: 20px;
   border: 1px solid #888;
+  /*pentru mobil*/
+  /*
   border-radius: 300px 0;
    width: 1034px;
     height: 918px;
+  width: 90%;
+  max-width: 400px;
+  height: auto;*/
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   background: #fff2fd;
+  width: 280px;
+  height: auto;
+  top: 400px;
+  left: 20px;
+  gap: 0px;
+  border-radius: 150px 0px 150px 0px;
+  opacity: 0px;
 }
 
 .close {
-  color: #aaa;
-  float: right;
+  color: #4c00fe;
+  position: absolute;
+  top: 10px;
+  right: 10px;
   font-size: 28px;
   font-weight: bold;
+  cursor: pointer;
 }
 
 .close:hover,
 .close:focus {
   color: black;
   text-decoration: none;
-  cursor: pointer;
 }
 
 .modal-logo {
+  width: 80px;
+  height: 80px;
+  border-radius: 40px;
+  /*
   width: 132px;
   height: 132px;
-  border-radius: 70px;
+  border-radius: 70px;*/
 }
 
 .modal-image {
+  display: none;
+  /*  width: 100%;
+pentru mobil*/
+  /*height: auto;
+  pentru mobil*/
+  /*
   width: 427px;
-  height: 326px;
+  height: 326px;*/
 }
 
 .modal-title {
   font-family: var(--font-family);
   font-weight: 600;
-  font-size: 24px;
+  font-size: 20px;
+  /*font-size: 24px;*/
   color: #dc56c5;
+  text-align: center;
 }
 
 .modal-text {
   font-family: var(--font-family);
   font-weight: 400;
-  font-size: 18px;
   color: #0e0e0e;
+  /*pentru mobil*/
+  font-size: 16px;
+  text-align: center;
+  width: 100%;
+  /*
   width: 427px;
+  font-size: 18px;*/
 }
 
 .modal-main {
   display: flex;
-  margin-top: 40px;
+  flex-direction: column;
+  /*pentru mobil*/
+  /* margin-top: 40px;*/
 }
 
 .modal-main-text {
   display: flex;
   flex-direction: column;
-  padding-left: 32px;
+  padding-left: 0;
 }
 
 .modal-buy {
   display: flex;
   flex-direction: column;
-
-  align-items: start;
+  /*pentru mobil*/
+  align-items: center;
+  /* align-items: start;*/
+  margin-top: 20px;
 }
 
 .button-grup {
   display: flex;
-  gap: 20px;
+  gap: 10px;
   margin-bottom: 20px;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .button-standard,
 .button-vip {
-  font-family: var(--font-family);
   width: 100%;
-  max-width: 145px;
-  height: auto;
+  max-width: 120px;
   padding: 10px 20px;
   font-size: 16px;
   color: #fff;
@@ -111,10 +145,10 @@
   cursor: pointer;
   transition: background-color 0.3s ease;
   box-sizing: border-box;
+  text-align: center;
   white-space: nowrap;
   overflow: hidden;
   text-transform: ellipsis;
-  margin-right: 60px;
 }
 
 .button-standard:hover,
@@ -123,8 +157,9 @@
 }
 
 .button-more {
-  width: 224px;
-  height: 30px;
+  max-width: 200px;
+  margin-top: 15px;
+  margin-bottom: 30px;
   line-height: 19.5px;
   border-radius: 5px;
   background-color: transparent;
@@ -137,4 +172,130 @@
 .button-more:hover {
   background-color: #dc56c5;
   color: #fff;
+}
+
+/*Stiluri pentru tableta*/
+@media screen and (min-width: 768px) {
+  .modal-content {
+    width: 704px;
+    height: 781px;
+    top: 160px;
+    left: 32px;
+    gap: 0px;
+    border-radius: 300px 0px 300px 0px;
+    opacity: 0px;
+  }
+
+  .close {
+    top: 20px;
+    right: 20px;
+  }
+
+  .modal-logo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+  }
+
+  .modal-image {
+    margin-top: 20px;
+    width: 300px;
+    height: auto;
+    display: block;
+  }
+
+  .modal-title {
+    font-size: 22px;
+    text-align: left;
+  }
+
+  .modal-text {
+    font-size: 18px;
+    width: 80%;
+    text-align: left;
+  }
+
+  .modal-main {
+    flex-direction: row;
+    /* Așezare pe orizontală pe tabletă */
+  }
+
+  .modal-main-text {
+    padding-left: 20px;
+  }
+
+  .button-grup {
+    flex-direction: row;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .button-standard,
+  .button-vip {
+    max-width: 130px;
+    /* Butoane mai mari pe tabletă */
+  }
+
+  .button-more {
+    max-width: 220px;
+  }
+}
+
+/* Stiluri pentru desktop */
+@media screen and (min-width: 1280px) {
+  .modal-content {
+    width: 1034px;
+    height: 918px;
+    border-radius: 300px 0;
+  }
+
+  .close {
+    top: 20px;
+    right: 20px;
+  }
+
+  .modal-logo {
+    width: 132px;
+    height: 132px;
+    border-radius: 70px;
+  }
+
+  .modal-image {
+    width: 427px;
+    height: 326px;
+    display: block;
+  }
+
+  .modal-title {
+    font-size: 24px;
+  }
+
+  .modal-text {
+    font-size: 18px;
+    width: 427px;
+  }
+  .modal-main-text {
+    padding-left: 20px;
+  }
+
+  .button-grup {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .button-standard,
+  .button-vip {
+    max-width: 145px;
+  }
+
+  .button-more {
+    width: 224px;
+    height: 30px;
+    margin-bottom: 50%;
+  }
 }
