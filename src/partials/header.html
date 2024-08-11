@@ -19,29 +19,28 @@
   </div>
   <h1>FIND BEST EVENTS <br />AROUND THE WORLD</h1>
   <div class="search-container">
-    <!-- <div class="search-bar">
-      <input type="text" placeholder="   Start searching" id="search-box" />
-    </div> -->
-    <!-- Comentez codul meu si sub el il introduc pe al lui Cosmin
-        <div class="search-bar">
-          <input type="text" placeholder="   Choose country" id="country-box" />
-        </div>-->
-    <!-- Start cod Cosmin -->
-    <!-- Start Searching Section -->
-    <div class="search-header">
-      <input
-        placeholder="Start searching"
-        class="search-header__input"
-        type="text"
-      />
-      <button class="search-header__button">
-        <svg class="search-header__icon">
-          <use href="./images/symbol-defs.svg#vector"></use>
-        </svg>
-      </button>
-    </div>
-    <!-- Start Searching Section  -->
 
+    <!-- Start Searching Section -->
+
+<div class="search-header">
+  <form id="searchForm">
+    <input
+      id="searchInput"
+      placeholder="Start searching"
+      class="search-header__input"
+      type="text"
+      required
+    />
+    <button type="submit" class="search-header__button">
+      <svg class="search-header__icon">
+        <use href="./images/symbol-defs.svg#vector"></use>
+      </svg>
+    </button>
+  </form>
+</div>
+
+<!-- Start Searching Section  -->
+    
     <!-- Choose Country Section -->
     <div class="container">
       <div class="dropdown-container">
