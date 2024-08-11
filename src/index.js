@@ -60,7 +60,6 @@ function displayEvents(events) {
 
 // Choose Country
 
-
 const dropdownInput = document.getElementById('dropdown-input');
 const dropdownMenu = document.querySelector('.dropdown-menu');
 
@@ -71,46 +70,54 @@ const eventsApi = {
     this.page = 1;
   },
   getEvents() {
-    return fetch(`https://app.ticketmaster.com/discovery/v2/events?countryCode=${this.countryCode}&page=${this.page}&apikey=${API_KEY}`)
-      .then(response => response.json());
-  }
+    return fetch(
+      `https://app.ticketmaster.com/discovery/v2/events?countryCode=${this.countryCode}&page=${this.page}&apikey=${API_KEY}`
+    ).then(response => response.json());
+  },
 };
-dropdownInput.addEventListener('click', function() {
-    dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+dropdownInput.addEventListener('click', function () {
+  dropdownMenu.style.display =
+    dropdownMenu.style.display === 'block' ? 'none' : 'block';
 });
 
-document.addEventListener('click', function(event) {
-    if (!dropdownInput.contains(event.target) && !dropdownMenu.contains(event.target)) {
-        dropdownMenu.style.display = 'none';
-    }
+document.addEventListener('click', function (event) {
+  if (
+    !dropdownInput.contains(event.target) &&
+    !dropdownMenu.contains(event.target)
+  ) {
+    dropdownMenu.style.display = 'none';
+  }
 });
 
 const dropdownItems = document.querySelectorAll('.dropdown-menu li');
 dropdownItems.forEach(item => {
-    item.addEventListener('click', function() {
-        dropdownInput.value = this.textContent;
-        dropdownMenu.style.display = 'none';
-        eventsApi.countryCode = this.getAttribute('data-value'); 
-        eventsApi.resetPage(); 
-        eventsApi.getEvents()
-            .then(data => {
-                if (data._embedded && data._embedded.events) {
-                    displayEvents(data._embedded.events);
-                } else {
-                    console.error('No events found');
-                }
-            })
-            .catch(error => {
-                console.error('There has been a problem with your fetch operation:', error);
-            });
-    });
+  item.addEventListener('click', function () {
+    dropdownInput.value = this.textContent;
+    dropdownMenu.style.display = 'none';
+    eventsApi.countryCode = this.getAttribute('data-value');
+    eventsApi.resetPage();
+    eventsApi
+      .getEvents()
+      .then(data => {
+        if (data._embedded && data._embedded.events) {
+          displayEvents(data._embedded.events);
+        } else {
+          console.error('No events found');
+        }
+      })
+      .catch(error => {
+        console.error(
+          'There has been a problem with your fetch operation:',
+          error
+        );
+      });
+  });
 });
 
 // -------------------INPUT START-SEARCHING-------------------------
 
-
 document.getElementById('searchForm').addEventListener('submit', function (e) {
-  e.preventDefault(); 
+  e.preventDefault();
 
   const keyword = document.getElementById('searchInput').value.trim();
   if (keyword) {
@@ -120,7 +127,7 @@ document.getElementById('searchForm').addEventListener('submit', function (e) {
 
 async function searchEvents(keyword) {
   const content = document.querySelector('.cards');
-  content.innerHTML = `<p>Searching for "${keyword}"...</p>`;
+  content.innerHTML = ``;
 
   try {
     const response = await fetch(
