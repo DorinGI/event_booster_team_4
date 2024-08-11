@@ -1,3 +1,4 @@
+/*pentru mobil*/
 .modal {
   display: none;
   position: fixed;
@@ -17,7 +18,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 16px 0px 7px 0px;
+  margin: 80px 0px 7px 0px;
 }
 
 .modal-content {
@@ -25,14 +26,6 @@
   background-color: #fff;
   padding: 20px;
   border: 1px solid #888;
-  /*pentru mobil*/
-  /*
-  border-radius: 300px 0;
-   width: 1034px;
-    height: 918px;
-  width: 90%;
-  max-width: 400px;
-  height: auto;*/
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   background: #fff2fd;
   width: 280px;
@@ -40,7 +33,7 @@
   top: 400px;
   left: 20px;
   gap: 0px;
-  border-radius: 150px 0px 150px 0px;
+  border-radius: 150px 0px;
   opacity: 0px;
 }
 
@@ -61,47 +54,33 @@
 }
 
 .modal-logo {
-  width: 80px;
-  height: 80px;
-  border-radius: 40px;
-  /*
-  width: 132px;
-  height: 132px;
+  width: 102px;
+  height: 102px;
   border-radius: 70px;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  margin-bottom: 20px;
 }
 
 .modal-image {
   display: none;
-  /*  width: 100%;
-pentru mobil*/
-  /*height: auto;
-  pentru mobil*/
-  /*
-  width: 427px;
-  height: 326px;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
 }
 
 .modal-title {
   font-family: var(--font-family);
   font-weight: 600;
   font-size: 20px;
-  /*font-size: 24px;*/
   color: #dc56c5;
   text-align: center;
   margin: 0px 0px 7px 0px;
+  text-transform: uppercase;
 }
 
 .modal-text {
   font-family: var(--font-family);
   font-weight: 400;
   color: #0e0e0e;
-  /*pentru mobil*/
   font-size: 16px;
   text-align: center;
   width: 100%;
@@ -123,8 +102,7 @@ pentru mobil*/
 .modal-main-text {
   display: flex;
   flex-direction: column;
-  padding-left: 32px;
-  justify-content: space-between
+  justify-content: space-between;
 }
 
 .modal-buy {
@@ -132,9 +110,19 @@ pentru mobil*/
   flex-direction: column;
   margin-top: 20px;
   align-self: start;
-  margin: 16px 0px 7px 45px;
 }
-
+.price {
+  display: flex;
+  align-items: center;
+  text-transform: capitalize;
+}
+.price::before {
+  content: url('../images/barcodeSvg.svg');
+  width: 24px;
+  height: 17px;
+  gap: 10px;
+  margin-right: 10px;
+}
 .button-grup {
   display: flex;
   gap: 10px;
@@ -187,6 +175,9 @@ pentru mobil*/
 
 /*Stiluri pentru tableta*/
 @media screen and (min-width: 768px) {
+  #modal-body {
+    margin: 32px 0px 7px 0px;
+  }
   .modal-content {
     width: 704px;
     height: 781px;
@@ -205,34 +196,36 @@ pentru mobil*/
   .modal-logo {
     width: 100px;
     height: 100px;
-    border-radius: 50px;
+    margin-bottom: 0px;
   }
 
   .modal-image {
-    margin-top: 20px;
-    width: 300px;
-    height: auto;
     display: block;
+    width: 249px;
+    height: 217px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
   }
 
   .modal-title {
-    font-size: 22px;
     text-align: left;
   }
 
   .modal-text {
-    font-size: 18px;
     width: 80%;
     text-align: left;
   }
 
   .modal-main {
     flex-direction: row;
-    /* Așezare pe orizontală pe tabletă */
+    margin-top: 40px;
   }
-
+  .modal-buy {
+    margin: 16px 0px 7px 45px;
+  }
   .modal-main-text {
-    padding-left: 20px;
+    padding-left: 32px;
   }
 
   .button-grup {
@@ -256,10 +249,12 @@ pentru mobil*/
 
 /* Stiluri pentru desktop */
 @media screen and (min-width: 1280px) {
+  #modal-body {
+    margin: 54px 0px 7px 0px;
+  }
   .modal-content {
     width: 1034px;
     height: 918px;
-    border-radius: 300px 0;
   }
 
   .close {
@@ -270,13 +265,11 @@ pentru mobil*/
   .modal-logo {
     width: 132px;
     height: 132px;
-    border-radius: 70px;
   }
 
   .modal-image {
     width: 427px;
     height: 326px;
-    display: block;
   }
 
   .modal-title {
@@ -287,10 +280,13 @@ pentru mobil*/
     font-size: 18px;
     width: 427px;
   }
-  .modal-main-text {
-    padding-left: 20px;
+  .modal-buy {
+    margin: 16px 0px 7px 55px;
   }
-
+  .price::before {
+    width: 29px;
+    height: 21px;
+  }
   .button-grup {
     display: flex;
     flex-direction: row;
