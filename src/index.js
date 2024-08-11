@@ -38,7 +38,7 @@ function displayEvents(events) {
     card.innerHTML = `
              <div class="card" data-id="${event.id}">
       <div class="event-image">
-        <img src= "${event.images[0].url}" alt="${event.name}" width="267">
+        <img src= "${event.images[5].url}" alt="${event.name}" width="267">
         </div>
         <div class="events">
           <h3 class="event-name">

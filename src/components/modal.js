@@ -2,11 +2,17 @@ export function openModal(event) {
   const modal = document.getElementById('eventModal');
   const modalBody = document.getElementById('modal-body');
   modalBody.innerHTML = `
-      <img class="modal-logo" src="${event.images[0].url}" alt="${event.name}"> 
+  <style>
+        .modal-logo {
+            background-image: url('${event.images[1].url}');
+        }
+        .modal-image {
+            background-image: url('${event.images[5].url}');
+        }
+    </style>    
+      <div class="modal-logo"></div> 
       <div class="modal-main">             
-        <img class="modal-image" src="${event.images[0].url}" alt="${
-    event.name
-  }">
+        <div class="modal-image"></div> 
         <div class="modal-main-text">
           <h2 class="modal-title">Info</h2>          
           <div class="modal-text">${event.info || ''}</div>

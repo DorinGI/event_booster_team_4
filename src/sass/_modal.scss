@@ -17,6 +17,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 16px 0px 7px 0px;
 }
 
 .modal-content {
@@ -49,11 +50,17 @@
   width: 132px;
   height: 132px;
   border-radius: 70px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .modal-image {
   width: 427px;
   height: 326px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .modal-title {
@@ -61,6 +68,7 @@
   font-weight: 600;
   font-size: 24px;
   color: #dc56c5;
+  margin: 0px 0px 7px 0px;
 }
 
 .modal-text {
@@ -69,6 +77,12 @@
   font-size: 18px;
   color: #0e0e0e;
   width: 427px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  margin: 0px 0px 16px 0px;
 }
 
 .modal-main {
@@ -80,13 +94,14 @@
   display: flex;
   flex-direction: column;
   padding-left: 32px;
+  justify-content: space-between
 }
 
 .modal-buy {
   display: flex;
   flex-direction: column;
-
-  align-items: start;
+  align-self: start;
+  margin: 16px 0px 7px 45px;
 }
 
 .button-grup {
