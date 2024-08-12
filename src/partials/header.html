@@ -1,26 +1,108 @@
 <header>
   <div class="logo">
     <div class="logo-content1">
-      <img src="./images/e.svg" alt="E" />
-      <img src="./images/v.svg" alt="V" />
-      <img src="./images/e.svg" alt="E" />
-      <img src="./images/n.svg" alt="N" />
-      <img src="./images/t.svg" alt="T" />
+      <img
+        id="responsive-image-e"
+        src="./images/e-m.svg"
+        alt="A description of the image"
+      />
+      <img
+        id="responsive-image-v"
+        src="./images/v-m.svg"
+        alt="A description of the image"
+      />
+      <img
+        id="responsive-image-e"
+        src="./images/e-m.svg"
+        alt="A description of the image"
+      />
+      <img
+        id="responsive-image-n"
+        src="./images/n-m.svg"
+        alt="A description of the image"
+      />
+      <img
+        id="responsive-image-t"
+        src="./images/t-m.svg"
+        alt="A description of the image"
+      />
     </div>
     <div class="logo-content2">
-      <img src="./images/b.svg" alt="B" />
-      <img class="move-up" src="./images/o1.svg" alt="O" />
-      <img class="move-down" src="./images/o2.svg" alt="O" />
-      <img src="./images/s.svg" alt="S" />
-      <img src="./images/t.svg" alt="T" />
-      <img src="./images/e.svg" alt="E" />
-      <img src="./images/r.svg" alt="R" />
+      <img
+        id="responsive-image-b"
+        src="./images/b-m.svg"
+        alt="A description of the image"
+      />
+      <img
+        class="move-up"
+        id="responsive-image-o1"
+        src="./images/o1-m.svg"
+        alt="A description of the image"
+      />
+      <img
+        class="move-down"
+        id="responsive-image-o2"
+        src="./images/o2-m.svg"
+        alt="A description of the image"
+      />
+      <img
+        id="responsive-image-s"
+        src="./images/s-m.svg"
+        alt="A description of the image"
+      />
+      <img
+        id="responsive-image-t"
+        src="./images/t-m.svg"
+        alt="A description of the image"
+      />
+      <img
+        id="responsive-image-e"
+        src="./images/e-m.svg"
+        alt="A description of the image"
+      />
+      <img
+        id="responsive-image-r"
+        src="./images/r-m.svg"
+        alt="A description of the image"
+      />
     </div>
   </div>
   <h1>FIND BEST EVENTS <br />AROUND THE WORLD</h1>
   <div class="search-container">
-    <!-- Start Searching Section -->
 
+    <div class="search-bar">
+      <input type="text" placeholder="       Start searching" id="search-box" />
+    </div>
+    <!-- Comentez codul meu si sub el il introduc pe al lui Cosmin
+        <div class="search-bar">
+          <input type="text" placeholder="   Choose country" id="country-box" />
+        </div>-->
+    <!-- Cosmin start cod - Choose Country Section -->
+    <div class="dropdown-container">
+      <input
+        type="text"
+        placeholder="Choose country"
+        id="dropdown-input"
+        readonly
+      />
+      <!--
+      <div class="dropdown-icon">
+        <svg
+          width="13"
+          height="8"
+          viewBox="0 0 13 8"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M6.5 8L0.00480968 0.5L12.9952 0.499999L6.5 8Z"
+            fill="#939393"
+          />
+        </svg>
+
+   <!-- Start Searching Section -->
+   <!-- Start Codul lui Gavrilencu Ionut -->   
+<!--
     <div class="search-header">
       <form id="searchForm">
         <input
@@ -37,11 +119,12 @@
         </button>
       </form>
     </div>
-
+-->
+    <!-- End Codul lui Gavrilencu Ionut --> 
     <!-- Start Searching Section  -->
 
     <!-- Choose Country Section -->
-    <div class="container">
+      <div class="container">
       <div class="dropdown-container">
         <input
           type="text"
@@ -148,8 +231,94 @@
           <li data-value="ve">Venezuela</li>
         </ul>
       </div>
+        <!-- Start Codul lui Cosmin --> 
+<!-- 
+      <ul class="dropdown-menu">
+        <li data-value="ad">Andorra</li>
+        <li data-value="ai">Anguilla</li>
+        <li data-value="ar">Argentina</li>
+        <li data-value="au">Australia</li>
+        <li data-value="at">Austria</li>
+        <li data-value="az">Azerbaijan</li>
+        <li data-value="bs">Bahamas</li>
+        <li data-value="bh">Bahrain</li>
+        <li data-value="bb">Barbados</li>
+        <li data-value="be">Belgium</li>
+        <li data-value="bm">Bermuda</li>
+        <li data-value="br">Brazil</li>
+        <li data-value="bg">Bulgaria</li>
+        <li data-value="ca">Canada</li>
+        <li data-value="cl">Chile</li>
+        <li data-value="cn">China</li>
+        <li data-value="co">Colombia</li>
+        <li data-value="cr">Costa Rica</li>
+        <li data-value="hr">Croatia</li>
+        <li data-value="cy">Cyprus</li>
+        <li data-value="cz">Czech Republic</li>
+        <li data-value="dk">Denmark</li>
+        <li data-value="do">Dominican Republic</li>
+        <li data-value="ec">Ecuador</li>
+        <li data-value="ee">Estonia</li>
+        <li data-value="fo">Faroe Islands</li>
+        <li data-value="fi">Finland</li>
+        <li data-value="fr">France</li>
+        <li data-value="ge">Georgia</li>
+        <li data-value="de">Germany</li>
+        <li data-value="gh">Ghana</li>
+        <li data-value="gi">Gibraltar</li>
+        <li data-value="gb">Great Britain</li>
+        <li data-value="gr">Greece</li>
+        <li data-value="hk">Hong Kong</li>
+        <li data-value="hu">Hungary</li>
+        <li data-value="is">Iceland</li>
+        <li data-value="in">India</li>
+        <li data-value="ie">Ireland</li>
+        <li data-value="il">Israel</li>
+        <li data-value="it">Italy</li>
+        <li data-value="jm">Jamaica</li>
+        <li data-value="jp">Japan</li>
+        <li data-value="kr">Korea, Republic of</li>
+        <li data-value="lv">Latvia</li>
+        <li data-value="lb">Lebanon</li>
+        <li data-value="lt">Lithuania</li>
+        <li data-value="lu">Luxembourg</li>
+        <li data-value="my">Malaysia</li>
+        <li data-value="mt">Malta</li>
+        <li data-value="mx">Mexico</li>
+        <li data-value="mc">Monaco</li>
+        <li data-value="me">Montenegro</li>
+        <li data-value="ma">Morocco</li>
+        <li data-value="nl">Netherlands</li>
+        <li data-value="an">Netherlands Antilles</li>
+        <li data-value="nz">New Zealand</li>
+        <li data-value="nd">Northern Ireland</li>
+        <li data-value="no">Norway</li>
+        <li data-value="pe">Peru</li>
+        <li data-value="pl">Poland</li>
+        <li data-value="pt">Portugal</li>
+        <li data-value="ro">Romania</li>
+        <li data-value="ru">Russian Federation</li>
+        <li data-value="lc">Saint Lucia</li>
+        <li data-value="sa">Saudi Arabia</li>
+        <li data-value="rs">Serbia</li>
+        <li data-value="sg">Singapore</li>
+        <li data-value="sk">Slovakia</li>
+        <li data-value="si">Slovenia</li>
+        <li data-value="za">South Africa</li>
+        <li data-value="es">Spain</li>
+        <li data-value="se">Sweden</li>
+        <li data-value="ch">Switzerland</li>
+        <li data-value="tw">Taiwan</li>
+        <li data-value="th">Thailand</li>
+        <li data-value="tt">Trinidad and Tobago</li>
+        <li data-value="tr">Turkey</li>
+        <li data-value="ua">Ukraine</li>
+        <li data-value="ae">United Arab Emirates</li>
+        <li data-value="uy">Uruguay</li>
+        <li data-value="ve">Venezuela</li>
+      </ul>
     </div>
-    <!-- Choose Country Section -->
-    <!-- End cod Cosmin -->
+--> 
+    <!-- Cosmin end cod - Choose Country Section -->
   </div>
 </header>
