@@ -36,9 +36,8 @@ function displayEvents(events) {
     const card = document.createElement('div');
     card.className = 'card';
     card.innerHTML = `
-             <div class="card" data-id="${event.id}">
-      <div class="event-image">
-        <img src= "${event.images[5].url}" alt="${event.name}" width="267">
+        <div class="event-image">
+          <img src= "${event.images[5].url}" alt="${event.name}" width="267">
         </div>
         <div class="events">
           <h3 class="event-name">
@@ -50,9 +49,7 @@ function displayEvents(events) {
           <p class="event-place">
           ${event._embedded.venues[0].name}
           </p>
-        </div>
-      </div>
-    </div>`;
+        </div>`;
     card.addEventListener('click', () => openModal(event));
     cardsContainer.appendChild(card);
   });
