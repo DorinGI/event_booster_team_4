@@ -111,11 +111,13 @@
   margin-top: 20px;
   align-self: start;
 }
+
 .price {
   display: flex;
   align-items: center;
   text-transform: capitalize;
 }
+
 .price::before {
   content: url('../images/barcodeSvg.svg');
   width: 24px;
@@ -123,6 +125,7 @@
   gap: 10px;
   margin-right: 10px;
 }
+
 .button-grup {
   display: flex;
   gap: 10px;
@@ -136,7 +139,7 @@
   width: 100%;
   max-width: 120px;
   padding: 10px 20px;
-  font-size: 16px;
+  font-size: 14px;
   color: #fff;
   background-color: #4c00fe;
   border: none;
@@ -156,16 +159,17 @@
 }
 
 .button-more {
+  display: inline-block;
   max-width: 200px;
   margin-top: 15px;
   margin-bottom: 30px;
   line-height: 19.5px;
+  font-size: 12px;
   border-radius: 5px;
   background-color: transparent;
   border: 1px solid #4c00fe;
   color: #dc56c5;
-  margin-right: auto;
-  margin-left: auto;
+  margin-left: 10%;
 }
 
 .button-more:hover {
@@ -178,6 +182,7 @@
   #modal-body {
     margin: 32px 0px 7px 0px;
   }
+
   .modal-content {
     width: 704px;
     height: 781px;
@@ -221,9 +226,11 @@
     flex-direction: row;
     margin-top: 40px;
   }
+
   .modal-buy {
     margin: 16px 0px 7px 45px;
   }
+
   .modal-main-text {
     padding-left: 32px;
   }
@@ -239,11 +246,17 @@
   .button-standard,
   .button-vip {
     max-width: 130px;
+    font-size: 14px;
     /* Butoane mai mari pe tabletă */
   }
 
   .button-more {
-    max-width: 220px;
+    display: block;
+    max-width: 100%;
+    padding: 0 20px;
+    margin-left: 50%;
+    font-size: 14px;
+    white-space: nowrap;
   }
 }
 
@@ -252,6 +265,7 @@
   #modal-body {
     margin: 54px 0px 7px 0px;
   }
+
   .modal-content {
     width: 1034px;
     height: 918px;
@@ -280,13 +294,16 @@
     font-size: 18px;
     width: 427px;
   }
+
   .modal-buy {
     margin: 16px 0px 7px 55px;
   }
+
   .price::before {
     width: 29px;
     height: 21px;
   }
+
   .button-grup {
     display: flex;
     flex-direction: row;
@@ -295,14 +312,22 @@
     flex-wrap: wrap;
     justify-content: center;
   }
+
   .button-standard,
   .button-vip {
     max-width: 145px;
   }
 
   .button-more {
+    box-sizing: border-box;
+    display: block;
     width: 224px;
     height: 30px;
     margin-bottom: 50%;
+    margin-left: 60%;
+    font-size: 16px;
+    padding: 0 20px;
+    text-align: center;
+    line-height: 30px;
   }
 }
