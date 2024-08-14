@@ -56,9 +56,9 @@ function displayEvents(events) {
 }
 
 // Choose Country
-
 const dropdownInput = document.getElementById('dropdown-input');
 const dropdownMenu = document.querySelector('.dropdown-menu');
+const noEventsMessage = document.getElementById('no-events-message');
 
 const eventsApi = {
   countryCode: '',
@@ -66,22 +66,24 @@ const eventsApi = {
   resetPage() {
     this.page = 1;
   },
-  getEvents() {
-    return fetch(
-      `https://app.ticketmaster.com/discovery/v2/events?countryCode=${this.countryCode}&page=${this.page}&apikey=${API_KEY}`
-    ).then(response => response.json());
+  async getEvents() {
+    try {
+      const response = await fetch(
+        `https://app.ticketmaster.com/discovery/v2/events?countryCode=${this.countryCode}&page=${this.page}&apikey=${API_KEY}`
+      );
+      return await response.json();
+    } catch (error) {
+      throw new Error('Failed to fetch events');
+    }
   },
 };
+
 dropdownInput.addEventListener('click', function () {
-  dropdownMenu.style.display =
-    dropdownMenu.style.display === 'block' ? 'none' : 'block';
+  dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
 });
 
 document.addEventListener('click', function (event) {
-  if (
-    !dropdownInput.contains(event.target) &&
-    !dropdownMenu.contains(event.target)
-  ) {
+  if (!dropdownInput.contains(event.target) && !dropdownMenu.contains(event.target)) {
     dropdownMenu.style.display = 'none';
   }
 });
@@ -93,23 +95,32 @@ dropdownItems.forEach(item => {
     dropdownMenu.style.display = 'none';
     eventsApi.countryCode = this.getAttribute('data-value');
     eventsApi.resetPage();
+
     eventsApi
       .getEvents()
       .then(data => {
         if (data._embedded && data._embedded.events) {
           displayEvents(data._embedded.events);
+          noEventsMessage.style.display = 'none';
         } else {
-          console.error('No events found');
+          clearEvents();
+          noEventsMessage.textContent = `Pentru țara ${dropdownInput.value} nu au fost găsite evenimente.`;
+          noEventsMessage.style.display = 'block';
         }
       })
       .catch(error => {
-        console.error(
-          'There has been a problem with your fetch operation:',
-          error
-        );
+        clearEvents();
+        noEventsMessage.textContent = 'A apărut o eroare la încărcarea evenimentelor. Vă rugăm să încercați din nou mai târziu.';
+        noEventsMessage.style.display = 'block';
       });
   });
 });
+
+function clearEvents() {
+  const eventsContainer = document.querySelector('.cards');
+  eventsContainer.innerHTML = '';
+}
+// Choose Country
 
 // -------------------INPUT START-SEARCHING-------------------------
 
@@ -143,4 +154,4 @@ async function searchEvents(keyword) {
 }
 
 // -------------------------------------------------------------------------------------
-// Choose Country
+
