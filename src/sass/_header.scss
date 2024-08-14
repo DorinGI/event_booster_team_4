@@ -204,6 +204,7 @@ header {
 /* Choose Country Section*/
 .dropdown-container {
   position: relative;
+  margin-right: 10px;
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
   font-size: 16px;
@@ -226,7 +227,18 @@ header {
   background-repeat: no-repeat;
   pointer-events: none; /* Ensure the icon does not block interaction with the input */
 }
-
+#no-events-message {
+  display: none;
+  color: red;
+  text-align: center;
+  position: absolute; 
+  width: 100%; 
+  top: 50%; 
+  left: 0; 
+  transform: translateY(-50%); 
+  z-index: 1000;
+  margin-top: 200px;
+}
 .dropdown-container::after {
   content: '';
   position: absolute;
@@ -252,7 +264,7 @@ header {
   color: #ffffff;
   width: 280px;
   height: 40px;
-  padding-left: 32px;
+  padding: 10px 20px 10px 43px;
   font-size: 16px;
   border: 1px solid #ccc;
   border-radius: 20px;
@@ -261,7 +273,7 @@ header {
 }
 .dropdown-menu {
   // position: absolute;
-  width: 270px;
+  width: 277px;
   max-height: 200px;
   margin: 0;
   padding: 0;
@@ -276,7 +288,6 @@ header {
   overflow-y: auto;
   position: absolute;
 }
-
 //modificari din 09-aug-2024
 /* Default fallback for small screens */
 #responsive-image-e {
@@ -391,6 +402,12 @@ header {
   #dropdown-input {
     width: 288px;
   }
+  .dropdown-menu{
+    margin-left: 6px;
+  }
+  #no-events-message{
+    margin-top: 220px;
+  }
 }
 
 /* Fallback for screens 1280px and above */
@@ -454,4 +471,8 @@ header {
   #dropdown-input {
     width: 288px;
   }
+  #no-events-message{
+    margin-top: 260px;
+  }
 }
+
