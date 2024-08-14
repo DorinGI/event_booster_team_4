@@ -142,9 +142,7 @@
 // //   }
 // // }
 
-
 // // ---------------Acest cod va oferi utilizatorilor feedback instant despre starea cererilor API și rezultatele căutărilor lor.----------------------------------------------------------------------
-
 
 import { openModal } from './components/modal.js';
 import { createPagination } from './components/footer.js';
@@ -189,7 +187,9 @@ async function loadPage(page) {
   } catch (error) {
     content.innerHTML = `<p>Error searching for "${keyword}". Please try again later.</p>`;
     createPagination(page, 1); // Nu au fost găsite rezultate din cauza unei erori
-    Notiflix.Notify.failure('There was an error processing your request. Please try again later.');
+    Notiflix.Notify.failure(
+      'There was an error processing your request. Please try again later.'
+    );
   }
 }
 
@@ -259,7 +259,9 @@ dropdownItems.forEach(item => {
           const resultsPerPage = data.page.size; // Numărul de rezultate pe pagină (din răspunsul API)
           const totalPages = Math.ceil(totalResults / resultsPerPage); // Calculează numărul total de pagini
           createPagination(1, totalPages); // Actualizează paginarea
-          Notiflix.Notify.success(`Found ${totalResults} results for the selected country.`);
+          Notiflix.Notify.success(
+            `Found ${totalResults} results for the selected country.`
+          );
         } else {
           console.error('No events found');
           createPagination(1, 1); // Nu sunt evenimente, avem o singură pagină
@@ -271,7 +273,9 @@ dropdownItems.forEach(item => {
           'There has been a problem with your fetch operation:',
           error
         );
-        Notiflix.Notify.failure('There was an error processing your request. Please try again later.');
+        Notiflix.Notify.failure(
+          'There was an error processing your request. Please try again later.'
+        );
       });
   });
 });
@@ -288,7 +292,7 @@ document.getElementById('searchForm').addEventListener('submit', function (e) {
 });
 
 // Actualizează pagina atunci când utilizatorul face clic pe un număr de pagină
-document.getElementById('pagination-container').addEventListener('click', (e) => {
+document.getElementById('pagination-container').addEventListener('click', e => {
   if (e.target.tagName === 'BUTTON') {
     const page = parseInt(e.target.textContent, 10);
     if (!isNaN(page) && page !== currentPage) {
@@ -297,5 +301,3 @@ document.getElementById('pagination-container').addEventListener('click', (e) =>
     }
   }
 });
-
-
