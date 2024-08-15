@@ -238,11 +238,15 @@ const eventsApi = {
 };
 
 dropdownInput.addEventListener('click', function () {
-  dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+  dropdownMenu.style.display =
+    dropdownMenu.style.display === 'block' ? 'none' : 'block';
 });
 
 document.addEventListener('click', function (event) {
-  if (!dropdownInput.contains(event.target) && !dropdownMenu.contains(event.target)) {
+  if (
+    !dropdownInput.contains(event.target) &&
+    !dropdownMenu.contains(event.target)
+  ) {
     dropdownMenu.style.display = 'none';
   }
 });
@@ -254,7 +258,6 @@ dropdownItems.forEach(item => {
     dropdownMenu.style.display = 'none';
     eventsApi.countryCode = this.getAttribute('data-value');
     eventsApi.resetPage();
-
     eventsApi
       .getEvents()
       .then(data => {
@@ -270,18 +273,19 @@ dropdownItems.forEach(item => {
           noEventsMessage.style.display = 'none';
         } else {
           clearEvents();
-          noEventsMessage.textContent = `Pentru țara ${dropdownInput.value} nu au fost găsite evenimente.`;
+          noEventsMessage.textContent = `No event was found for country ${dropdownInput.value}.😊 Don't be upset, maybe for this reason you will have the opportunity to travel to another country. 😊`;
           noEventsMessage.style.display = 'block';
+          createPagination(1, 1); // Nu sunt evenimente, avem o singură pagină
         }
       })
       .catch(error => {
         clearEvents();
-        noEventsMessage.textContent = 'A apărut o eroare la încărcarea evenimentelor. Vă rugăm să încercați din nou mai târziu.';
+        noEventsMessage.textContent =
+          'A apărut o eroare la încărcarea evenimentelor. Vă rugăm să încercați din nou mai târziu.';
         noEventsMessage.style.display = 'block';
         console.error('No events found');
-          createPagination(1, 1); // Nu sunt evenimente, avem o singură pagină
-          Notiflix.Notify.failure('No events found for the selected country.');
-
+        createPagination(1, 1); // Nu sunt evenimente, avem o singură pagină
+        Notiflix.Notify.failure('No events found for the selected country.');
       });
   });
 });
