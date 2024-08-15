@@ -116,6 +116,7 @@
   display: flex;
   align-items: center;
   text-transform: capitalize;
+  height: 40px;
 }
 
 .price::before {
@@ -132,6 +133,7 @@
   margin-bottom: 20px;
   flex-wrap: wrap;
   justify-content: center;
+  text-align: center;
 }
 
 .button-standard,
@@ -169,7 +171,7 @@
   background-color: transparent;
   border: 1px solid #4c00fe;
   color: #dc56c5;
-  margin-left: 10%;
+  margin-left: 5%;
 }
 
 .button-more:hover {
@@ -229,6 +231,8 @@
 
   .modal-buy {
     margin: 16px 0px 7px 45px;
+    text-align: center;
+    width: 100%;
   }
 
   .modal-main-text {
@@ -236,17 +240,25 @@
   }
 
   .button-grup {
+    display: flex;
     flex-direction: row;
     gap: 10px;
     margin-bottom: 20px;
     flex-wrap: wrap;
     justify-content: center;
   }
+  .button-grup > * {
+    flex: 1 1 auto;
+  }
+  .button-grup:empty {
+    justify-content: flex-start;
+  }
 
   .button-standard,
   .button-vip {
     max-width: 130px;
     font-size: 14px;
+
     /* Butoane mai mari pe tabletă */
   }
 
@@ -254,7 +266,9 @@
     display: block;
     max-width: 100%;
     padding: 0 20px;
-    margin-left: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
     font-size: 14px;
     white-space: nowrap;
   }
@@ -309,8 +323,14 @@
     flex-direction: row;
     gap: 10px;
     margin-bottom: 20px;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: center;
+  }
+  .button-grup > * {
+    flex: 1 1 auto;
+  }
+  .button-grup:only-child {
+    justify-content: flex-start;
   }
 
   .button-standard,
@@ -324,7 +344,9 @@
     width: 224px;
     height: 30px;
     margin-bottom: 50%;
-    margin-left: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
     font-size: 16px;
     padding: 0 20px;
     text-align: center;
