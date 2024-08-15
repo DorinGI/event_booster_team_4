@@ -149,6 +149,7 @@ import { createPagination } from './components/footer.js';
 import Notiflix from 'notiflix';
 
 const API_KEY = 'Z9sML3GkU2JtjpwYuKAphTWzMdRrsxCG';
+const noEventsMessage = document.getElementById('no-events-message');
 
 let keyword = ''; // Variabilă globală pentru cuvântul cheie
 let currentPage = 1; // Variabilă globală pentru pagina curentă
@@ -180,12 +181,13 @@ async function loadPage(page) {
       createPagination(page, totalPages); // Actualizează paginarea
       Notiflix.Notify.success(`Found ${totalResults} results for "${keyword}"`);
     } else {
-      content.innerHTML = `<p>No results found for "${keyword}".</p>`;
+      // content.innerHTML = `<p>No results found for "${keyword}".</p>`;
+      noEventsMessage.textContent = `No results found for "${keyword}" 😟 `;
+      noEventsMessage.style.display = 'block';
       createPagination(page, 1); // Nu sunt rezultate, avem o singură pagină
       Notiflix.Notify.failure(`No results found for "${keyword}"`);
     }
   } catch (error) {
-    content.innerHTML = `<p>Error searching for "${keyword}". Please try again later.</p>`;
     createPagination(page, 1); // Nu au fost găsite rezultate din cauza unei erori
     Notiflix.Notify.failure(
       'There was an error processing your request. Please try again later.'
@@ -217,7 +219,6 @@ function displayEvents(events) {
 
 const dropdownInput = document.getElementById('dropdown-input');
 const dropdownMenu = document.querySelector('.dropdown-menu');
-const noEventsMessage = document.getElementById('no-events-message');
 
 const eventsApi = {
   countryCode: '',
