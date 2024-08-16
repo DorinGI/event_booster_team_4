@@ -231,7 +231,7 @@
 
   .modal-buy {
     margin: 16px 0px 7px 45px;
-    text-align: center;
+    // text-align: center;
     width: 100%;
   }
 
@@ -245,7 +245,7 @@
     gap: 10px;
     margin-bottom: 20px;
     flex-wrap: wrap;
-    justify-content: center;
+    text-align: start;
   }
   .button-grup > * {
     flex: 1 1 auto;
@@ -324,7 +324,6 @@
     gap: 10px;
     margin-bottom: 20px;
     flex-wrap: nowrap;
-    justify-content: center;
   }
   .button-grup > * {
     flex: 1 1 auto;
@@ -341,7 +340,7 @@
   .button-more {
     box-sizing: border-box;
     display: block;
-    width: 224px;
+    // width: 224px;
     height: 30px;
     margin-bottom: 50%;
     margin-left: auto;
